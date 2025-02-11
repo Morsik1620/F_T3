@@ -1,0 +1,85 @@
+{% extends 'index_pd.html' %} <!-- указываем базовый файл -->
+ {% block notes %}
+<h1>Дневник программиста</h1>
+<p>
+<h2>Введите данные</h2>
+<form method="post">
+    Заголовок записи: <input type="text" name="zz" required><br>
+    Текст записи: <input type="text" name="tz" required><br>
+    <button type="submit">Добавить</button>
+</form>
+<!-- создаем таблицу -->
+<h3>Результаты</h3>
+<table border="1">
+    <tr>
+        <th>Заголовок записи:</th>
+        <th>Текст записи: </th>
+    </tr>
+    {% for row in data %}
+    <tr>
+        <td>{{ row.zz }}</td>
+        <td>{{ row.tz }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+    <!-- выпадающий список как пример
+    <label for="courses">Select Courses</label>
+       <select id="courses" name="student_courses">
+         <optgroup label="Engineering">
+           <option value="computer_engineering">Computer Science</option>
+           <option value="electrical_engineering">Electrical</option>
+           <option value="mechanical_engineering">Mechanical</option>
+           <option value="chemical_engineering">Chemical</option>
+           <option value="civil_engineering">Civil</option>
+    </optgroup>
+    <optgroup label="Management">
+          <option value="finance_management">Finance Management</option>
+          <option value="technology_management">Technology</option>
+          <option value="marketing_management">Marketing</option>
+          <option value="business_administration">Business</option>
+        </optgroup>
+    </select>
+-->
+<!--
+<p style="text-align:center">
+<label for="Select Courses">Название дисциплин</label>
+   <select id="Select Courses" name="student_courses">
+     <option value="Основы языка програмирования">Python</option>
+     <option value="Система контроля Git">Git</option>
+     <option value="OC Linux">Linux</option>
+     <option value="Алгоритмы и структуры данных">Algoritm</option>
+     <option value="Базы данных">BD</option>
+     <option value="Расширенные возможности Python">PitonPro</option>
+     <option value="Фреймворк Flask">Flask</option>
+     <option value="Фреймворк Django">Django</option>
+   </select>
+</p>
+-->
+<!--
+<p style="text-align:center">
+<label for="Select Courses">Название дисциплин</label>
+   <select id="Select Courses" name="student_courses">
+     <option value="1">Python</option>
+     <option value="2">Git</option>
+     <option value="3">Linux</option>
+     <option value="4">Algoritm</option>
+     <option value="5">BD</option>
+     <option value="6">PitonPro</option>
+     <option value="7">Flask</option>
+     <option value="8">Django</option>
+   </select>
+</p>
+
+<form action="/" method="post">
+  <label for="zz">Заголовок записи:</label> <input type="text" id="zz" name="ZagZap" required><br>
+  <label for="tz">Текст записи:</label> <input type="text" id="tz" name="taz" required><br>
+
+  <label for="bio">Biography</label> <textarea id="bio" name="student_bio"></textarea>
+
+  <button type="submit">Записать</button>
+  <button type="reset">Очистить поля</button>
+</form>
+-->
+</p>
+ {% endblock %}
